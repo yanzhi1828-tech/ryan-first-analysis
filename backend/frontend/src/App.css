@@ -1,0 +1,181 @@
+/* === 全局设置 === */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden; /* 防止整个页面滚动 */
+}
+
+/* === 核心布局：左侧边栏 + 右侧内容 === */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* === 左侧 Sidebar (固定宽度 350px) === */
+.sidebar {
+  width: 350px;
+  background-color: #111;
+  border-right: 1px solid #333;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 0 20px rgba(0,0,0,0.5);
+  z-index: 10;
+}
+
+.brand h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.version-tag {
+  font-size: 0.7rem;
+  color: #666;
+  background: #222;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+input {
+  flex: 1;
+  background: #222;
+  border: 1px solid #444;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+input:focus {
+  border-color: #0072ff;
+}
+
+button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.mini-dashboard {
+  margin-top: 40px;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+
+.stock-header h1 {
+  font-size: 3rem;
+  margin: 0;
+  line-height: 1;
+}
+
+.stock-header p {
+  color: #888;
+  margin: 5px 0 20px 0;
+}
+
+.big-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: block;
+}
+
+.change-tag {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.green { color: #00ff88; }
+.red { color: #ff4d4d; }
+
+.ai-trigger-btn {
+  width: 100%;
+  margin-top: 40px;
+  padding: 15px;
+  background: linear-gradient(135deg, #0072ff 0%, #00c6ff 100%);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+  transition: transform 0.2s;
+}
+
+.ai-trigger-btn:hover {
+  transform: translateY(-2px);
+}
+
+.error-box {
+  margin-top: 20px;
+  color: #ff4d4d;
+  background: rgba(255, 77, 77, 0.1);
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* === 右侧 Main Content (自适应) === */
+.main-content {
+  flex: 1;
+  background-color: #000;
+  padding: 40px;
+  overflow-y: auto; /* 只有右侧可以滚动 */
+}
+
+.empty-state {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #444;
+}
+
+/* 卡片样式 */
+.chart-card, .analysis-card {
+  background: #0d0d0d;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.chart-container {
+  height: 350px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* AI 报告排版美化 (Markdown) */
+.markdown-body h1 { font-size: 1.5rem; border-bottom: 1px solid #333; padding-bottom: 10px; color: #00c6ff; margin-top: 30px;}
+.markdown-body p { line-height: 1.8; color: #ccc; font-size: 1.1rem; }
+.markdown-body strong { color: #fff; }
+.markdown-body ul { padding-left: 20px; color: #ccc; }
+.markdown-body li { margin-bottom: 10px; }
+
+/* 动画 */
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
