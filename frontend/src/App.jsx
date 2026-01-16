@@ -22,7 +22,7 @@ function App() {
 
     try {
       // 后端会自动处理你是输的名字还是代码
-      const response = await axios.get(`http://127.0.0.1:8000/api/stock/${query}`)
+      const response = await axios.get(`https://ryan-first-analysis.onrender.com/api/stock/${query}`)
       
       if (response.data.error) {
         setError(response.data.error)
@@ -40,7 +40,7 @@ function App() {
     if (!data) return
     setAiLoading(true)
     try {
-      const response = await axios.post(`http://127.0.0.1:8000/api/analyze`, {
+      const response = await axios.post(`https://ryan-first-analysis.onrender.com/api/analyze`, {
         symbol: data.symbol,
         name: data.name,
         price: data.price,
